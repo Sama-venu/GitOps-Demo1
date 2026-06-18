@@ -19,16 +19,18 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - mountPath: "/opt/tmp"  
+            - mountPath: "/opt/tmp"
+              name: devops
 
 
         - name: cont2
           image: ubuntu
           command: ["/bin/bash", "-c", "while true; do echo welcome to devops; sleep 10; done"]
           volumeMounts:
-            - mountpath: "/tmp/docker"
+            - mountPath: "/tmp/docker"
+              name: devops
        
       volumes:
-        name: devops
-        persistentVolumeclaim:
-          - claimName: pvc1   
+        - name: devops
+          persistentVolumeClaim:
+            claimName: pvc1   
