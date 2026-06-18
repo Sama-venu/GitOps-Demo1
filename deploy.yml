@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cont1
-          image: venusama/movies:HollywoodCollection
+          image: venusama/nginx:fruitscollection
           ports:
             - containerPort: 80
           volumeMounts:
